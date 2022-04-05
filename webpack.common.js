@@ -3,8 +3,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
+    'assets/scripts/vendor': './src/assets/scripts/vendor.js',
     'assets/scripts/main': './src/index.js',
-    'assets/scripts/vendor': './src/assets/scripts/vendor.js'
   },
   module: {
     rules: [
