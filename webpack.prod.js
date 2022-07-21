@@ -11,7 +11,8 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'static/[name].[contenthash][ext]',
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -44,13 +45,6 @@ module.exports = merge(common, {
           MiniCssExtractPlugin.loader,
           'css-loader',
         ],
-      },
-      {
-        test: /\.(svg|png|jpg|gif)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'static/[name].[contenthash][ext]',
-        },
       },
       {
         test: /\.(svg|png|jpg|gif)$/,

@@ -9,7 +9,8 @@ module.exports = merge(common, {
   mode: 'development',
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'static/[name][ext]',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -39,9 +40,6 @@ module.exports = merge(common, {
       {
         test: /\.(svg|png|jpg|gif)$/,
         type: 'asset/resource',
-        generator: {
-          filename: 'static/[name][ext]',
-        },
       },
     ]
   }
